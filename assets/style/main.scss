@@ -1,0 +1,229 @@
+// Option A: Include all of Bootstrap
+/* SCSS HEX */
+$white: #fefefeff;
+$buff: #d5996eff;
+$umber: #6a5344ff;
+$jet: #333130ff;
+$sunset: #fbd69cff;
+$thistle: #c0b6d1ff;
+$ghost-white: #f4f1f6ff;
+$pomp-and-power: #80739fff;
+$cool-gray: #8d82a5ff;
+$pomp-and-power-2: #736796ff;
+$ultra-violet: #6a5c91ff;
+
+$transition: 0.3s;
+
+// Include any default variable overrides here (though functions won't be available)
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// Then add additional custom code here
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  overflow: hidden;
+}
+
+.desktopNav {
+  border-bottom: 1px solid $jet;
+  box-shadow: 0 0 20px $jet;
+
+  a {
+    color: $ultra-violet;
+    letter-spacing: 1px;
+
+    &:hover {
+      color: $cool-gray;
+    }
+  }
+
+  .nav {
+    list-style: none;
+    padding: 0;
+
+    .nav-item {
+      display: inline-block;
+      margin-right: 20px;
+
+      .nav-link {
+        position: relative;
+        text-decoration: none;
+        color: $ultra-violet;
+        letter-spacing: 1px;
+
+        &:hover {
+          color: $cool-gray;
+        }
+
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          width: 0;
+          height: 3px;
+          background-color: $ultra-violet;
+          transition: width $transition ease-out;
+        }
+
+        &::before {
+          left: 0;
+        }
+
+        &::after {
+          right: 0;
+        }
+
+        &:hover::before,
+        &:hover::after,
+        &.active::before,
+        &.active::after {
+          width: 50%;
+        }
+
+        &.active {
+          font-weight: 700;
+        }
+      }
+    }
+
+    button {
+      color: $ultra-violet;
+      font-size: 15px;
+      border: 1px solid $ultra-violet;
+      border-radius: 5px;
+      background-color: #fff;
+      font-weight: 600;
+      transition: all $transition ease-out;
+
+      i {
+        font-size: 20px;
+      }
+
+      &:hover {
+        background-color: $ultra-violet;
+        color: #fff;
+      }
+    }
+  }
+}
+
+.modal {
+  background-color: #33313065;
+
+  .modal-dialog {
+    height: 80%;
+
+    .modal-content {
+      background-color: $white;
+      height: 100%;
+      border: 10px;
+    }
+  }
+}
+
+.mobileNav {
+  border-bottom: 1px solid $jet;
+  box-shadow: 0 0 20px $jet;
+
+  a {
+    color: $ultra-violet;
+    letter-spacing: 1px;
+    font-size: 12px;
+
+    &:hover {
+      color: $cool-gray;
+    }
+  }
+
+  button {
+    border: none;
+
+    i {
+      color: $ultra-violet;
+      font-size: 30px;
+      font-weight: 600;
+    }
+  }
+
+  .offcanvas {
+    max-width: 250px;
+
+    .nav {
+      list-style: none;
+      padding: 0;
+
+      .nav-item {
+        margin-right: 20px;
+        margin: 30px;
+
+        .nav-link {
+          position: relative;
+          text-decoration: none;
+          color: $ultra-violet;
+          letter-spacing: 1px;
+
+          &:hover {
+            color: $cool-gray;
+          }
+
+          &::before,
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            width: 0;
+            height: 3px;
+            background-color: $ultra-violet;
+            transition: width $transition ease-out;
+          }
+
+          &::before {
+            left: 0;
+          }
+
+          &::after {
+            right: 0;
+          }
+
+          &:hover::before,
+          &:hover::after,
+          &.active::before,
+          &.active::after {
+            width: 50%;
+          }
+
+          &.active {
+            font-weight: 700;
+          }
+        }
+      }
+
+      button {
+        color: $ultra-violet;
+        font-size: 13px;
+        border: 1px solid $ultra-violet;
+        border-radius: 5px;
+        background-color: #fff;
+        font-weight: 600;
+        transition: all $transition ease-out;
+
+        i {
+          font-size: 20px;
+        }
+
+        &:hover {
+          background-color: $ultra-violet;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
